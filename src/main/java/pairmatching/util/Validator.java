@@ -2,7 +2,13 @@ package pairmatching.util;
 
 public class Validator {
 
-    private boolean hasOnlyDigit(String input) {
+    private static final String QUIT = "Q";
+
+    private boolean isDigit(String input) {
         return input.chars().allMatch(Character::isDigit);
+    }
+
+    private boolean isQuitCommand(String input) {
+        return input.equals(QUIT);
     }
 }
