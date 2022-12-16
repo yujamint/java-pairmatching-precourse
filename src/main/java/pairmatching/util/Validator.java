@@ -44,7 +44,7 @@ public class Validator {
         return Course.names().contains(inputCourse);
     }
 
-    private static boolean isValidLevelInput(String input) {
-        return Level.names().contains(input);
+    private static boolean isValidLevelInput(String inputLevel) {
+        return Level.names().contains(inputLevel);
     }
 }
