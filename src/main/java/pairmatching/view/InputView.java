@@ -11,4 +11,10 @@ public class InputView {
         return input;
     }
 
+    public String readDetailInformation() {
+        String input = Console.readLine();
+        Validator.validateDetailInformation(input);
+        return input;
+    }
+
 }
