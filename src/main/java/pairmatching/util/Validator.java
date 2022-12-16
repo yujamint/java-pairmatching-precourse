@@ -47,4 +47,9 @@ public class Validator {
     private static boolean isValidLevelInput(String inputLevel) {
         return Level.names().contains(inputLevel);
     }
+
+    private static boolean isValidMissionInput(String inputLevel, String inputMission) {
+        return Mission.missionsByLevel(inputLevel).stream()
+                .anyMatch(mission -> mission.name().equals(inputMission));
+    }
 }
