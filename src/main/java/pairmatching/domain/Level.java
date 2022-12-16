@@ -25,4 +25,8 @@ public enum Level {
 
         return levelNames;
     }
+
+    public String getName() {
+        return name;
+    }
 }
