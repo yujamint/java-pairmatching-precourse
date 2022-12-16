@@ -1,10 +1,25 @@
 package pairmatching.util;
 
+import static pairmatching.util.Constant.MAX_FUNCTION_NUMBER;
+import static pairmatching.util.Constant.MIN_FUNCTION_NUMBER;
+
+import pairmatching.message.ErrorMessage;
+
 public class Validator {
     private static final String QUIT = "Q";
     private static final int LENGTH_OF_FUNCTION_SELECTION = 1;
-    private static final int MIN_SELECTION = 1;
-    private static final int MAX_SELECTION = 3;
+
+    public void validateFunctionSelection(String input) {
+        if (!isCorrectLength(input)) {
+            throw new IllegalArgumentException(ErrorMessage.INCORRECT_FUNCTION_SELECTION);
+        }
+        if (isDigit(input) && !isValidRange(input)) {
+            throw new IllegalArgumentException(ErrorMessage.INCORRECT_FUNCTION_NUMBER);
+        }
+        if (!isDigit(input) && !isQuitCommand(input)) {
+            throw new IllegalArgumentException(ErrorMessage.INCORRECT_FUNCTION_SELECTION);
+        }
+    }
 
     private boolean isCorrectLength(String input) {
         return input.length() == LENGTH_OF_FUNCTION_SELECTION;
@@ -16,7 +31,7 @@ public class Validator {
 
     private boolean isValidRange(String input) {
         int functionOption = input.charAt(0) - '0';
-        return functionOption >= MIN_SELECTION && functionOption <= MAX_SELECTION;
+        return functionOption >= MIN_FUNCTION_NUMBER && functionOption <= MAX_FUNCTION_NUMBER;
     }
 
     private boolean isQuitCommand(String input) {
