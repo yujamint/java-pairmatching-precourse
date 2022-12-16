@@ -4,6 +4,7 @@ import static pairmatching.util.Constant.MAX_FUNCTION_NUMBER;
 import static pairmatching.util.Constant.MIN_FUNCTION_NUMBER;
 import static pairmatching.util.Constant.YES_MATCHING;
 import static pairmatching.util.Constant.NO_MATCHING;
+import static pairmatching.util.Constant.QUIT;
 
 import pairmatching.domain.Course;
 import pairmatching.domain.Level;
@@ -11,7 +12,6 @@ import pairmatching.domain.Mission;
 import pairmatching.message.ErrorMessage;
 
 public class Validator {
-    private static final String QUIT = "Q";
     private static final int LENGTH_OF_FUNCTION_SELECTION = 1;
     private static final int COURSE_INDEX = 0;
     private static final int LEVEL_INDEX = 1;
