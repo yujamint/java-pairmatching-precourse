@@ -8,4 +8,12 @@ public class OutputView {
         System.out.println(NoticeMessage.FUNCTION_SELECTION_NOTICE + '\n');
     }
 
+    public void printDetailInformationInputNotice() {
+        System.out.println(NoticeMessage.DETAIL_INFORMATION_INPUT_NOTICE + '\n');
+    }
+
+    public void printRematchingCommandInputNotice() {
+        System.out.println(NoticeMessage.REMATCHING_COMMAND_INPUT_NOTICE);
+    }
+
 }
