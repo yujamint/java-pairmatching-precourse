@@ -1,5 +1,8 @@
 package pairmatching.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum Level {
     LEVEL1("레벨1"),
     LEVEL2("레벨2"),
@@ -11,5 +14,15 @@ public enum Level {
 
     Level(String name) {
         this.name = name;
+    }
+
+    public static List<String> names() {
+        List<String> levelNames = new ArrayList<>();
+
+        for (Level level : values()) {
+            levelNames.add(level.name);
+        }
+
+        return levelNames;
     }
 }
