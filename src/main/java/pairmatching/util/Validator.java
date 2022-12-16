@@ -9,7 +9,7 @@ public class Validator {
     private static final String QUIT = "Q";
     private static final int LENGTH_OF_FUNCTION_SELECTION = 1;
 
-    public void validateFunctionSelection(String input) {
+    public static void validateFunctionSelection(String input) {
         if (!isCorrectLength(input)) {
             throw new IllegalArgumentException(ErrorMessage.INCORRECT_FUNCTION_SELECTION);
         }
@@ -21,20 +21,20 @@ public class Validator {
         }
     }
 
-    private boolean isCorrectLength(String input) {
+    private static boolean isCorrectLength(String input) {
         return input.length() == LENGTH_OF_FUNCTION_SELECTION;
     }
 
-    private boolean isDigit(String input) {
+    private static boolean isDigit(String input) {
         return input.chars().allMatch(Character::isDigit);
     }
 
-    private boolean isValidRange(String input) {
+    private static boolean isValidRange(String input) {
         int functionOption = input.charAt(0) - '0';
         return functionOption >= MIN_FUNCTION_NUMBER && functionOption <= MAX_FUNCTION_NUMBER;
     }
 
-    private boolean isQuitCommand(String input) {
+    private static boolean isQuitCommand(String input) {
         return input.equals(QUIT);
     }
 }
