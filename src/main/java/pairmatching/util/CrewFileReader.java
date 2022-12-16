@@ -5,19 +5,21 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import pairmatching.domain.Course;
+import pairmatching.domain.Crew;
 
 public class CrewFileReader {
 
-    public List<String> readBackendCrew() {
-        ArrayList<String> backendCrews = new ArrayList<>();
+    public List<Crew> readBackendCrew() {
+        ArrayList<Crew> backendCrews = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader("src/main/resources/backend-crew.md"));
             while (true) {
-                String crew = br.readLine();
-                if (crew == null) {
+                String name = br.readLine();
+                if (name == null) {
                     break;
                 }
-                backendCrews.add(crew);
+                backendCrews.add(new Crew(Course.BACKEND, name));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -25,16 +27,16 @@ public class CrewFileReader {
         return backendCrews;
     }
 
-    public List<String> readFrontendCrew() {
-        ArrayList<String> frontendCrews = new ArrayList<>();
+    public List<Crew> readFrontendCrew() {
+        ArrayList<Crew> frontendCrews = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader("src/main/resources/frontend-crew.md"));
             while (true) {
-                String crew = br.readLine();
-                if (crew == null) {
+                String name = br.readLine();
+                if (name == null) {
                     break;
                 }
-                frontendCrews.add(crew);
+                frontendCrews.add(new Crew(Course.FRONTEND, name));
             }
         } catch (IOException e) {
             e.printStackTrace();
