@@ -3,6 +3,7 @@ package pairmatching.util;
 import static pairmatching.util.Constant.MAX_FUNCTION_NUMBER;
 import static pairmatching.util.Constant.MIN_FUNCTION_NUMBER;
 
+import pairmatching.domain.Course;
 import pairmatching.message.ErrorMessage;
 
 public class Validator {
@@ -36,5 +37,9 @@ public class Validator {
 
     private static boolean isQuitCommand(String input) {
         return input.equals(QUIT);
+    }
+
+    private static boolean isValidCourseInput(String input) {
+        return input.equals(Course.BACKEND.name()) || input.equals(Course.FRONTEND.name());
     }
 }
