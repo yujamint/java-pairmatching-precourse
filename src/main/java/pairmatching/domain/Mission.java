@@ -21,4 +21,10 @@ public enum Mission {
         this.name = name;
         this.level = level;
     }
+
+    public static List<Mission> missionsByLevel(String inputLevel) {
+        return Arrays.stream(values())
+                .filter(mission -> mission.level.name().equals(inputLevel))
+                .collect(Collectors.toList());
+    }
 }
