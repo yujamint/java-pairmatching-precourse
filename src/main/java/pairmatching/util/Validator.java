@@ -40,8 +40,8 @@ public class Validator {
         return input.equals(QUIT);
     }
 
-    private static boolean isValidCourseInput(String input) {
-        return Course.names().contains(input);
+    private static boolean isValidCourseInput(String inputCourse) {
+        return Course.names().contains(inputCourse);
     }
 
     private static boolean isValidLevelInput(String input) {
