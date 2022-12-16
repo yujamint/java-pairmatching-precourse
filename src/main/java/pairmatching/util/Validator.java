@@ -40,6 +40,6 @@ public class Validator {
     }
 
     private static boolean isValidCourseInput(String input) {
-        return input.equals(Course.BACKEND.name()) || input.equals(Course.FRONTEND.name());
+        return Course.names().contains(input);
     }
 }
