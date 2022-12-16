@@ -17,7 +17,7 @@ public class Validator {
 
     public static void validateFunctionSelection(String input) {
         if (!isCorrectLength(input)) {
-            throw new IllegalArgumentException(ErrorMessage.INCORRECT_FUNCTION_SELECTION);
+            throw new IllegalArgumentException(ErrorMessage.INCORRECT_FUNCTION_INPUT);
         }
         if (isDigit(input) && !isValidRange(input)) {
             throw new IllegalArgumentException(ErrorMessage.INCORRECT_FUNCTION_NUMBER);
