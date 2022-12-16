@@ -17,4 +17,9 @@ public class InputView {
         return input;
     }
 
+    public String readReMatchingCommand() {
+        String input = Console.readLine();
+        Validator.validateReMatchingCommand(input);
+        return input;
+    }
 }
