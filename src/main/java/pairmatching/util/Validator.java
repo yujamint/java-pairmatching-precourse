@@ -2,6 +2,8 @@ package pairmatching.util;
 
 import static pairmatching.util.Constant.MAX_FUNCTION_NUMBER;
 import static pairmatching.util.Constant.MIN_FUNCTION_NUMBER;
+import static pairmatching.util.Constant.YES_MATCHING;
+import static pairmatching.util.Constant.NO_MATCHING;
 
 import pairmatching.domain.Course;
 import pairmatching.domain.Level;
@@ -44,6 +46,12 @@ public class Validator {
         }
     }
 
+    public static void validateReMatchingCommand(String input) {
+        if (!isValidReMatchingCommand(input)) {
+            throw new IllegalArgumentException(ErrorMessage.INCORRECT_MATCHING_COMMAND);
+        }
+    }
+
     private static boolean isCorrectLength(String input) {
         return input.length() == LENGTH_OF_FUNCTION_SELECTION;
     }
@@ -72,5 +80,9 @@ public class Validator {
     private static boolean isValidMissionInput(String inputLevel, String inputMission) {
         return Mission.missionsByLevel(inputLevel).stream()
                 .anyMatch(mission -> mission.name().equals(inputMission));
+    }
+
+    private static boolean isValidReMatchingCommand(String input) {
+        return input.equals(YES_MATCHING) || input.equals(NO_MATCHING);
     }
 }
