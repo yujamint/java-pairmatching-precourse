@@ -29,4 +29,5 @@ public class NoticeMessage {
                     + "%s | %s",
             Constant.YES_MATCHING, Constant.NO_MATCHING
     );
+    public static final String PAIR_INITIALIZE_NOTICE = "초기화 되었습니다.";
 }
