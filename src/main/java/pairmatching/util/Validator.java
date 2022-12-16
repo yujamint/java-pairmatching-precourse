@@ -4,6 +4,7 @@ import static pairmatching.util.Constant.MAX_FUNCTION_NUMBER;
 import static pairmatching.util.Constant.MIN_FUNCTION_NUMBER;
 
 import pairmatching.domain.Course;
+import pairmatching.domain.Level;
 import pairmatching.message.ErrorMessage;
 
 public class Validator {
@@ -41,5 +42,9 @@ public class Validator {
 
     private static boolean isValidCourseInput(String input) {
         return Course.names().contains(input);
+    }
+
+    private static boolean isValidLevelInput(String input) {
+        return Level.names().contains(input);
     }
 }
